@@ -7,14 +7,20 @@ function App() {
   const [count, setCount] = useState(0)
 
   const increment = () => {
-    setCount(count => count++)
+    console.log(`button clicked: ${count}`)
+    setCount(count => count + 1)
+    console.log("count: ", count)
   }
   return (
     <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world! {count}
-      <button onClick={increment}></button>
-    </h1>
+      <div className=' w-96 h-96'>
+        <h1 className='text-3xl font-bold underline'>
+          Hello world! {count}
+        </h1>
+      </div>
+      <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={increment}>
+        Increment Count
+      </button>
     </>
   )
 }
