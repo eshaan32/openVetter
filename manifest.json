@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Hello Extensions of the world",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
