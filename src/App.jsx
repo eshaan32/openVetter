@@ -1,10 +1,14 @@
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
+import PromptSubmission from './promptSubmission'
+import Button from './Button'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  // state to be passed for promptSubmission
+  const [userPrompt, setUserPrompt] = useState('');
+
 
   const increment = () => {
     console.log(`button clicked: ${count}`)
@@ -14,13 +18,13 @@ function App() {
   return (
     <>
       <div className=' w-96 h-96'>
-        <h1 className='text-3xl font-bold underline'>
-          Hello world! {count}
+        <h1 className='text-3xl font-bold underline pb-2'>
+          Vet Your Prompt!
         </h1>
+        <PromptSubmission userPrompt={userPrompt} setUserPrompt={setUserPrompt} />
+        {/* <Button /> */}
       </div>
-      <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={increment}>
-        Increment Count
-      </button>
+
     </>
   )
 }
