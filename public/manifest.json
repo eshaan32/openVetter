@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions of the world",
-  "description": "Base Level Extension",
+  "name": "OpenVetter Prompt Engineer Assistant",
+  "description": "A quick LLM prompt assistant to check the overall usefulness and correctness of an LLM prompt; based on OpenAI's Prompt Guidelines",
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
