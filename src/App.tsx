@@ -1,32 +1,32 @@
-import { useState } from 'react'
-import './App.css'
-import PromptSubmission from './promptSubmission'
-import Button from './Button'
+import React, { useState } from 'react';
+import './App.css';
+import PromptSubmission from './PromptSubmission';
+import Button from './Button';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const [count, setCount] = useState<number>(0);
 
   // state to be passed for promptSubmission
-  const [userPrompt, setUserPrompt] = useState('');
+  const [userPrompt, setUserPrompt] = useState<string>('');
 
+  const submitPrompt = () => {
+    setCount(count => {
+      console.log(`button clicked: ${count}`);
+      return count + 1;
+    });
+  };
 
-  const increment = () => {
-    console.log(`button clicked: ${count}`)
-    setCount(count => count + 1)
-    console.log("count: ", count)
-  }
   return (
     <>
-      <div className=' w-96 h-96'>
+      <div className='w-96 h-96'>
         <h1 className='text-3xl font-bold underline pb-2'>
           Vet Your Prompt!
         </h1>
         <PromptSubmission userPrompt={userPrompt} setUserPrompt={setUserPrompt} />
-        {/* <Button /> */}
+        <Button submitPrompt={submitPrompt} />
       </div>
-
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

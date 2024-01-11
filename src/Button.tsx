@@ -1,8 +1,15 @@
-function Button() {
+import React from 'react';
 
-  function submitUserPrompt() {
-    console.log('This is the prompt you want to vet:\n')
-  }
+type Props = {
+  submitPrompt: () => void
+}
+
+const Button: React.FC<Props> = ({ submitPrompt }) => {
+  const submitUserPrompt = () => {
+    // should call an action that is passed down as a prop by parent component
+    submitPrompt()
+    console.log('This is the prompt you want to vet:\n');
+  };
 
   return (
     <>
@@ -14,7 +21,7 @@ function Button() {
         Button Component button
       </button>
     </>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
