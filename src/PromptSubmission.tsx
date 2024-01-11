@@ -1,16 +1,18 @@
 // import { useState } from 'react';
 
+import { TextareaHTMLAttributes } from 'react';
+
 function PromptSubmission({ userPrompt, setUserPrompt }) {
   // State to hold the user's input
 
   // Handler for when the text in the text area changes
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: click) => {
     setUserPrompt(event.target.value);
     console.log('User Prompt:', userPrompt)
   };
 
   // Handler for when the form is submitted
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     event.preventDefault(); // Prevents the default form submission behavior
     console.log('User Prompt:', userPrompt); // Logs the user prompt to the console (or handle as needed)
 
